@@ -13,6 +13,7 @@ module.exports = {
   entry: [
     'babel-polyfill',
     './app/bundles/HelloWorld/startup/serverRegistration',
+    './app/bundles/Cats/startup/serverRegistration',
   ],
   output: {
     filename: 'server-bundle.js',

@@ -28,7 +28,8 @@ module.exports = {
     // webpack.client.rails.hot.config and webpack.client.rails.build.config
     app: [
       // './app/startup/clientRegistration',
-      './app/bundles/HelloWorld/startup/registration'
+      './app/bundles/HelloWorld/startup/registration',
+      './app/bundles/Cats/startup/catsRegistration'
     ],
   },
   resolve: {
