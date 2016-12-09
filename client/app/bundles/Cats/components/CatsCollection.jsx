@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import CatInstance from './CatInstance';
 
 export default class CatsCollection extends React.Component {
 
@@ -15,19 +16,19 @@ export default class CatsCollection extends React.Component {
   }
 
   render() {
-    // var cats = this.props.cats.map = (cat) => {
-    //   <CatInstance
-    //     key={cat.id}
-    //     name={cat.name}
-    //   />
-    // };
-    // return (
-    //   <div>
-    //     { cats }
-    //   </div>
-    // );
+    var cats = this.props.cats.map(function(cat) {
+      return (
+        <CatInstance
+          key={cat.id}
+          name={cat.name}
+        />
+      )
+    });
     return (
-      <h2> Cats Collection is Visible! </h2>
-    )
+      <div>
+        <h2> Here are all the cats: </h2>
+        { cats }
+      </div>
+    );
   }
 }
