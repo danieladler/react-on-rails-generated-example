@@ -18,5 +18,5 @@
 //= require vendor-bundle
 //= require app-bundle
 
-// Non-webpack assets include turbolinks and these are loaded in the "hot" mode as well.
+// Non-webpack assets incl turbolinks
 //= require application_non_webpack
