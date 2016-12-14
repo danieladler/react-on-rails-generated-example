@@ -1,8 +1,8 @@
 import { createStore } from 'redux';
-import CatsReducer from '../reducers/CatsReducer';
+import rootReducer from '../reducers/index';
 
 const configureStore = (railsProps) => (
-  createStore(CatsReducer, railsProps)
+  createStore(rootReducer, railsProps)
 );
 
 export default configureStore;
