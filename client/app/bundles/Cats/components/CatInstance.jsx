@@ -11,18 +11,15 @@ export default class Cats extends React.Component {
 
     // How to set initial state in ES6 class syntax
     // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    this.state = { name: this.props.name };
+    // this.state = { cat: this.props.cat };
   }
 
-  updateName = (name) => {
-    this.setState({ name });
-  };
-
   render() {
+    const { cat, i } = this.props;
     return (
       <div>
         <h3>
-          Meow, {this.state.name}!
+          Meow, {cat.name}!
         </h3>
         <hr />
         <form >
@@ -32,8 +29,8 @@ export default class Cats extends React.Component {
           <input
             id="name"
             type="text"
-            value={this.state.name}
-            onChange={(e) => this.updateName(e.target.value)}
+            value={cat.name}
+            onChange={(e) => this.props.updateName(e.target.value, cat.id)}
           />
         </form>
       </div>

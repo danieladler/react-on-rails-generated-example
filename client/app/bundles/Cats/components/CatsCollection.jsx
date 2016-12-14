@@ -16,14 +16,17 @@ export default class CatsCollection extends React.Component {
   }
 
   render() {
-    var cats = this.props.cats.map(function(cat) {
-      return (
-        <CatInstance
-          key={cat.id}
-          name={cat.name}
-        />
-      )
-    });
+    var _this = this,
+        cats = this.props.cats.map(function(cat, i) {
+        return (
+          <CatInstance
+            key={i}
+            i={i}
+            cat={cat}
+            {... _this.props}
+          />
+        )
+      });
     return (
       <div>
         <h2> Here are all the cats: </h2>
