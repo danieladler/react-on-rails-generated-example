@@ -23,7 +23,7 @@ export default class CatsCollection extends React.Component {
             key={i}
             i={i}
             cat={cat}
-            {... _this.props}
+            {..._this.props}
           />
         )
       });

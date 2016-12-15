@@ -30,7 +30,7 @@ export default class Cats extends React.Component {
             id="name"
             type="text"
             value={cat.name}
-            onChange={(e) => this.props.updateName(e.target.value, cat.id)}
+            onChange={(e) => this.props.updateName(e.target.value, i)}
           />
         </form>
       </div>
