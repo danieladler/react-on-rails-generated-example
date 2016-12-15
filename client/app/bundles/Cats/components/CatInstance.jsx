@@ -21,18 +21,12 @@ export default class Cats extends React.Component {
         <h3>
           Meow, {cat.name}!
         </h3>
+        <h4> Crucial details: </h4>
+        <ul>
+          <li> color: { cat.color} </li>
+          <li> treat count: { cat.treats} </li>
+        </ul>
         <hr />
-        <form >
-          <label htmlFor="name">
-            Give a treat to:
-          </label>
-          <input
-            id="name"
-            type="text"
-            value={cat.name}
-            onChange={(e) => this.props.updateName(e.target.value, i)}
-          />
-        </form>
       </div>
     );
   }
