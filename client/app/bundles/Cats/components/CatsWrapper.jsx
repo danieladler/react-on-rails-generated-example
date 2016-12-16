@@ -16,14 +16,14 @@ export default class CatsWrapper extends React.Component {
   }
 
   handleSubmit = values => {
-    console.log(values);
+    this.props.addCat(values);
   }
 
   render() {
     return (
       <div>
         <CatsCollection {...this.props} />
-        <AddCatForm onSubmit={this.handleSubmit}/>
+        <AddCatForm {...this.props} onSubmit={this.handleSubmit}/>
       </div>
     );
   }

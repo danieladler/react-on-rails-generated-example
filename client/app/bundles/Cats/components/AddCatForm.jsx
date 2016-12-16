@@ -11,6 +11,9 @@ const AddCatForm = (props) => {
           <div>
             <Field name="name" component="input" type="text" placeholder="name"/>
           </div>
+          <div>
+            <Field name="color" component="input" type="text" placeholder="color"/>
+          </div>
         </div>
         <div>
           <button type="submit" disabled={pristine || submitting}>Submit</button>
