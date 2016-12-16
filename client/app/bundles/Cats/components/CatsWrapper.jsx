@@ -15,11 +15,15 @@ export default class CatsWrapper extends React.Component {
     this.state = { cats: this.props.cats };
   }
 
+  handleSubmit = values => {
+    console.log(values);
+  }
+
   render() {
     return (
       <div>
         <CatsCollection {...this.props} />
-        <AddCatForm />
+        <AddCatForm onSubmit={this.handleSubmit}/>
       </div>
     );
   }
