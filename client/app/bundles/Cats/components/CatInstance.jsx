@@ -21,12 +21,14 @@ export default class Cats extends React.Component {
         <h3>
           Meow, {cat.name}!
         </h3>
-        <h4> Crucial details: </h4>
-        <ul>
-          <li> color: { cat.color} </li>
-          <li> treat count: {cat.treats} </li>
-          <button onClick={this.props.incrementTreat.bind(null, i)}> +1 treats </button>
-        </ul>
+        <div>
+          <h4> Crucial details: </h4>
+          <ul>
+            <li> color: { cat.color} </li>
+            <li> treat count: {cat.treats} </li>
+            <button onClick={this.props.incrementTreat.bind(null, i)}> +1 treats </button>
+          </ul>
+        </div>
         <hr />
       </div>
     );
