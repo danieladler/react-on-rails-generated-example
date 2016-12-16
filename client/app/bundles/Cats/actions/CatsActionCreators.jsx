@@ -2,7 +2,7 @@
 
 import { INCREMENT_TREAT } from '../constants/CatsConstants';
 
-export const incrementTreat = (i) => ({
+export const incrementTreat = (index) => ({
   type: INCREMENT_TREAT,
-  i
+  index
 });

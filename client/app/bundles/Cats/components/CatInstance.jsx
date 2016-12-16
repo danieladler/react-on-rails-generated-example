@@ -24,7 +24,8 @@ export default class Cats extends React.Component {
         <h4> Crucial details: </h4>
         <ul>
           <li> color: { cat.color} </li>
-          <li> treat count: { cat.treats} </li>
+          <li> treat count: {cat.treats} </li>
+          <button onClick={this.props.incrementTreat.bind(null, i)}> +1 treats </button>
         </ul>
         <hr />
       </div>
