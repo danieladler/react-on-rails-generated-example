@@ -3,7 +3,11 @@
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import * as actions from '../actions/CatsActionCreators';
-import CatsCollection from '../components/CatsCollection';
+
+// OLD:
+// import CatsCollection from '../components/CatsCollection';
+
+import CatsWrapper from '../components/CatsWrapper'
 
 // Which part of the Redux global state does our component want to receive as props?
 const mapStateToProps = (state) => ({ cats: state.cats });
@@ -19,6 +23,9 @@ const mapDispatchToProps = (dispatch) => (
 // // dispatch is bound, as in mapDispatchToProps?
 // const CatsContainer = connect(mapStateToProps, actions)(CatsCollection);
 
+// OLD:
+// const CatsContainer = connect(mapStateToProps, mapDispatchToProps)(CatsCollection);
+
 // WORKS:
-const CatsContainer = connect(mapStateToProps, mapDispatchToProps)(CatsCollection);
+const CatsContainer = connect(mapStateToProps, mapDispatchToProps)(CatsWrapper);
 export default CatsContainer

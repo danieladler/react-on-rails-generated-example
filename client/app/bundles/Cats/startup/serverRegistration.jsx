@@ -4,6 +4,7 @@ import ReactOnRails from 'react-on-rails';
 // React components
 import CatsCollection from '../components/CatsCollection';
 import CatInstance from '../components/CatInstance';
+import AddCatForm from '../components/AddCatForm';
 
 // Generator function
 import CatsApp from './CatsApp';
@@ -11,5 +12,6 @@ import CatsApp from './CatsApp';
 ReactOnRails.register({
   CatsCollection,
   CatInstance,
+  AddCatForm,
   CatsApp
 });
