@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
+import CatForm from './CatForm';
 
-export default class Cat extends React.Component {
+export default class CatInstance extends React.Component {
 
   /**
    * @param props - Comes from your rails view.
@@ -11,22 +12,10 @@ export default class Cat extends React.Component {
   }
 
   render() {
-    const { cat, i } = this.props;
+    // const { cat, i } = this.props;
+    var _this = this;
     return (
-      <div>
-        <h3>
-          Meow, {cat.name}!
-        </h3>
-        <div>
-          <h4> Crucial details: </h4>
-          <ul>
-            <li> color: { cat.color} </li>
-            <li> treat count: {cat.treats} </li>
-            <button onClick={this.props.incrementTreat.bind(null, i)}> +1 treats </button>
-          </ul>
-        </div>
-        <hr />
-      </div>
+      <CatForm {..._this.props} />
     );
   }
 }

@@ -1,17 +1,7 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 import { reduxForm, Field } from 'redux-form'
-import MenuItem from 'material-ui/MenuItem'
-import { RadioButton } from 'material-ui/RadioButton'
-import {
-  Checkbox,
-  RadioButtonGroup,
-  SelectField,
-  TextField,
-  Toggle
-} from 'redux-form-material-ui';
 
-class CatFormInstance extends React.Component {
-
+class CatForm extends React.Component {
   /**
    * @param props - Comes from your rails view.
    * @param _railsContext - Comes from React on Rails
@@ -28,11 +18,6 @@ class CatFormInstance extends React.Component {
           Meow, {cat.name}!
         </h3>
         <div>
-          <h3>
-            Name test will go here 
-          </h3>
-        </div>
-        <div>
           <h4> Crucial details: </h4>
           <ul>
             <li> color: { cat.color} </li>
@@ -47,8 +32,8 @@ class CatFormInstance extends React.Component {
 }
 
 export default reduxForm({
-  form: 'catFormInstance',
+  form: 'catForm',
   initialValues: {
     name: 'test',
   }
-})(CatFormInstance)
+})(CatForm)
