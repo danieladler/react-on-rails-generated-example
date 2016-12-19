@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import CatInstance from './CatInstance';
+// import CatInstance from './CatInstance';
+import CatFormInstance from './CatFormInstance';
 import AddCatForm from './AddCatForm';
 
 export default class CatsCollection extends React.Component {
@@ -16,7 +17,7 @@ export default class CatsCollection extends React.Component {
     var _this = this,
       cats = this.props.cats.map(function(cat, i) {
       return (
-        <CatInstance
+        <CatFormInstance
           key={i}
           i={i}
           cat={cat}
