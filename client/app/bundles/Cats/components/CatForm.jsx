@@ -1,39 +1,63 @@
 import React, { PropTypes } from 'react';
-import { reduxForm, Field } from 'redux-form'
+import { reduxForm, Field, initialize } from 'redux-form';
+import { connect } from 'react-redux';
+
+// const form = reduxForm({
+//   form: 'CatForm'
+// });
+
+const renderField = field => (
+    <div>
+      <label>{field.input.label}</label>
+      <input {...field.input}/>
+    </div>
+);
 
 class CatForm extends React.Component {
-  /**
-   * @param props - Comes from your rails view.
-   * @param _railsContext - Comes from React on Rails
-   */
-  constructor(props, _railsContext) {
-    super(props);
+  // componentDidMount() {
+  //   this.handleInitialize();
+  // }
+  //
+  // handleInitialize() {
+  //   console.log(this.props.cat.name);
+  //   var cat = this.props.cat,
+  //       initData = {
+  //         "name": cat.name,
+  //       };
+  //
+  //   this.props.initialize(initData);
+  // }
+
+  handleFormSubmit(formProps) {
+    this.props.submitFormAction(formProps);
   }
 
   render() {
-    const { cat, i } = this.props;
+    const { handleSubmit } = this.props
     return (
       <div>
-        <h3>
-          Meow, {cat.name}!
-        </h3>
-        <div>
-          <h4> Crucial details: </h4>
-          <ul>
-            <li> color: { cat.color} </li>
-            <li> treat count: {cat.treats} </li>
-            <button onClick={this.props.incrementTreat.bind(null, i)}> +1 treats </button>
-          </ul>
-        </div>
-        <hr />
-      </div>
-    );
+       <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+         <Field name="name" type="text" component={renderField} label="First Name"/>
+         <button action="submit">Save changes</button>
+       </form>
+     </div>
+    )
   }
 }
 
 export default reduxForm({
   form: 'catForm',
   initialValues: {
-    name: 'test',
+    name: 'test'
+    // name: this.props.cat.name,
   }
 })(CatForm)
+
+// function mapStateToProps(state) {
+//   return {
+//     catSample: state.cats[0],
+//   };
+// }
+
+// export default connect(mapStateToProps)(form(CatForm));
+// export default form(CatForm);
