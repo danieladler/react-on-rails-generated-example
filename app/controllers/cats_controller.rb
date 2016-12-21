@@ -1,6 +1,6 @@
 class CatsController < ApplicationController
   def index
-    @cats = { cats: [
+    @props = { cats: [
       {id: 12, name: "Flip", color: "tabby brown", treats: 1},
       {id: 72, name: "Bibi", color: "tabby brown", treats: 3},
       {id: 55, name: "Frank", color: "grey", treats: 0},

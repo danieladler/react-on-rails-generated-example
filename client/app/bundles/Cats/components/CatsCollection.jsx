@@ -6,13 +6,12 @@ import CatForm from './CatForm';
 export default class CatsCollection extends React.Component {
   render() {
     var _this = this,
-      cats = this.props.cats.map(function(cat, i) {
-        return (
+      cats = this.props.cats.map(function(cat, index) {
+        return (<div key={index}>{cat.name}
           <CatForm
-            key={i}
-            i={i}
+            index={index}
             cat={cat}
-          />
+          /></div>
         )
     });
     return (
