@@ -9,6 +9,15 @@ const updateName = (state, action) => {
   ];
 }
 
+const incrementTreat = (state, action) => {
+  const { index } = action;
+  return [
+    ...state.slice(0,index), // before the one we are updating
+    {...state[index], treats: state[index].treats + 1},
+    ...state.slice(index + 1), // after the one we are updating
+  ]
+}
+
 const cats = (state = [], action) => {
   switch (action.type) {
     case UPDATE_CAT_ATTRS:
@@ -16,12 +25,7 @@ const cats = (state = [], action) => {
       return updateName(state, action);
     case INCREMENT_TREAT:
       console.log("incrementing treats");
-      const index = action.index;
-      return [
-        ...state.slice(0,index), // before the one we are updating
-        {...state[index], treats: state[index].treats + 1},
-        ...state.slice(index + 1), // after the one we are updating
-      ];
+      return incrementTreat(state, action);
     case ADD_CAT:
       console.log("adding a new cat");
       const lastCat = state[state.length - 1];
