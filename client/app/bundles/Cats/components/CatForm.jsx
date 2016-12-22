@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { reduxForm, Field, initialize } from 'redux-form';
 import { connect } from 'react-redux';
-import {UPDATE_CAT_ATTRS} from '../constants/CatsConstants';
+import { UPDATE_CAT_ATTRS, INCREMENT_TREAT } from '../constants/CatsConstants';
 
 const FieldComponent = field => {
   return (
@@ -26,15 +26,34 @@ class CatForm extends React.Component {
     dispatch({type: UPDATE_CAT_ATTRS, index, name, color});
   }
 
+  incrementTreat = (event) => {
+    event.preventDefault
+    const { index, dispatch } = this.props;
+    dispatch({type: INCREMENT_TREAT, index});
+  }
+
   render() {
-    const { handleSubmit } = this.props
+    const { cat, handleSubmit } = this.props
     return (
       <div>
        <form onSubmit={this.handleFormSubmit}>
-         <Field ref="Name" name="name" type="text" component="input" />
-         <Field ref="Color" name="color" type="text" component="input"/>
+         <div>
+           <label> Name: </label>
+           <Field ref="Name" name="name" type="text" component="input" />
+           {cat.name}
+         </div>
+         <div>
+           <label> Color: </label>
+           <Field ref="Color" name="color" type="text" component="input"/>
+           {cat.color}
+         </div>
          <button action="submit">Save changes</button>
        </form>
+       <div>
+         <label> treat count: {cat.treats} </label>
+         <button onClick={this.incrementTreat}> +1 treat </button>
+       </div>
+       <br/>
      </div>
     )
   }

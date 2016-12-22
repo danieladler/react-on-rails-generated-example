@@ -8,8 +8,6 @@ export default class CatsCollection extends React.Component {
       cats = this.props.cats.map(function(cat, index) {
         return (
           <div key={index}>
-            {cat.name}
-            {cat.color}
             <CatForm
               index={index}
               cat={cat}
