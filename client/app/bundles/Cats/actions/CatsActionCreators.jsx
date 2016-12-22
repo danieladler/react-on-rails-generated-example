@@ -1,8 +1,14 @@
 /* eslint-disable import/prefer-default-export */
 
-import { CAT_NAME_UPDATE } from '../constants/CatsConstants';
+import { INCREMENT_TREAT } from '../constants/CatsConstants';
+import { ADD_CAT } from '../constants/CatsConstants';
 
-export const updateName = (text) => ({
-  type: CAT_NAME_UPDATE,
-  text,
+export const incrementTreat = (index) => ({
+  type: INCREMENT_TREAT,
+  index
 });
+
+export const addCat = (values) => ({
+  type: ADD_CAT,
+  values
+})

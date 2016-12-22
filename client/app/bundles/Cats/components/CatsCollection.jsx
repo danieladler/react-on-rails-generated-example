@@ -1,28 +1,19 @@
 import React, { PropTypes } from 'react';
-import CatInstance from './CatInstance';
+import AddCatForm from './AddCatForm';
+import CatForm from './CatForm';
 
 export default class CatsCollection extends React.Component {
-
-  /**
-   * @param props - Comes from your rails view.
-   * @param _railsContext - Comes from React on Rails
-   */
-  constructor(props, _railsContext) {
-    super(props);
-
-    // How to set initial state in ES6 class syntax
-    // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    this.state = { cats: this.props.cats };
-  }
-
   render() {
-    var cats = this.props.cats.map(function(cat) {
-      return (
-        <CatInstance
-          key={cat.id}
-          name={cat.name}
-        />
-      )
+    var _this = this,
+      cats = this.props.cats.map(function(cat, index) {
+        return (
+          <div key={index}>
+            <CatForm
+              index={index}
+              cat={cat}
+            />
+          </div>
+        )
     });
     return (
       <div>
