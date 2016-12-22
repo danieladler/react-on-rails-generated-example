@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-// import CatIns  tance from './CatInstance';
 import AddCatForm from './AddCatForm';
 import CatForm from './CatForm';
 
@@ -7,11 +6,14 @@ export default class CatsCollection extends React.Component {
   render() {
     var _this = this,
       cats = this.props.cats.map(function(cat, index) {
-        return (<div key={index}>{cat.name}
-          <CatForm
-            index={index}
-            cat={cat}
-          /></div>
+        return (
+          <div key={index}>
+            {cat.name}
+            <CatForm
+              index={index}
+              cat={cat}
+            />
+          </div>
         )
     });
     return (

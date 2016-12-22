@@ -1,18 +1,6 @@
 import { ADD_CAT, INCREMENT_TREAT, UPDATE_CAT_NAME } from '../constants/CatsConstants';
 
-// const cat = (state = {}, action) => {
-//   switch (action.type) {
-//     case INCREMENT_TREAT:
-//       console.log("triggered within singular CAT constant");
-//       console.log(i);
-//     default:
-//       return state
-//   }
-// };
-
-// cats[index]
-
-function updateName(state, action) {
+const updateName = (state, action) => {
   const { index, name } = action;
   return [
     ...state.slice(0,index), // before the one we are updating
