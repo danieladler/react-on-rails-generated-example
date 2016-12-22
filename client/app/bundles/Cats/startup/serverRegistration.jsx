@@ -3,7 +3,6 @@ import ReactOnRails from 'react-on-rails';
 
 // React components
 import CatsCollection from '../components/CatsCollection';
-import CatInstance from '../components/CatInstance';
 import CatForm from '../components/CatForm';
 import AddCatForm from '../components/AddCatForm';
 
@@ -12,7 +11,6 @@ import CatsApp from './CatsApp';
 
 ReactOnRails.register({
   CatsCollection,
-  CatInstance,
   CatForm,
   AddCatForm,
   CatsApp

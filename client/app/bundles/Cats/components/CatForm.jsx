@@ -3,15 +3,6 @@ import { reduxForm, Field, initialize } from 'redux-form';
 import { connect } from 'react-redux';
 import { UPDATE_CAT_ATTRS, INCREMENT_TREAT } from '../constants/CatsConstants';
 
-const FieldComponent = field => {
-  return (
-    <div>
-      <label>{field.input.label}</label>
-      <input {...field.input}/>
-    </div>
-  );
-}
-
 class CatForm extends React.Component {
   constructor(props, context) {
     super(props, context)
