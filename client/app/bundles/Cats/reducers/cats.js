@@ -1,18 +1,18 @@
-import { ADD_CAT, INCREMENT_TREAT, UPDATE_CAT_NAME } from '../constants/CatsConstants';
+import { ADD_CAT, INCREMENT_TREAT, UPDATE_CAT_ATTRS } from '../constants/CatsConstants';
 
 const updateName = (state, action) => {
-  const { index, name } = action;
+  const { index, name, color } = action;
   return [
     ...state.slice(0,index), // before the one we are updating
-    {...state[index], name},
+    {...state[index], name, color},
     ...state.slice(index + 1), // after the one we are updating
   ];
 }
 
 const cats = (state = [], action) => {
   switch (action.type) {
-    case UPDATE_CAT_NAME:
-      console.log("updating name");
+    case UPDATE_CAT_ATTRS:
+      console.log("updating attrs");
       return updateName(state, action);
     case INCREMENT_TREAT:
       console.log("incrementing treats");

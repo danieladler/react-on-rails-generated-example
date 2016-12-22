@@ -9,6 +9,7 @@ export default class CatsCollection extends React.Component {
         return (
           <div key={index}>
             {cat.name}
+            {cat.color}
             <CatForm
               index={index}
               cat={cat}

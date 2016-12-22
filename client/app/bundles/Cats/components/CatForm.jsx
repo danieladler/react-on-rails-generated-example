@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { reduxForm, Field, initialize } from 'redux-form';
 import { connect } from 'react-redux';
-import {UPDATE_CAT_NAME} from '../constants/CatsConstants';
+import {UPDATE_CAT_ATTRS} from '../constants/CatsConstants';
 
 const FieldComponent = field => {
   return (
@@ -21,8 +21,9 @@ class CatForm extends React.Component {
   handleFormSubmit(event) {
     event.preventDefault();
     const name = this.refs.Name.value;
+    const color = this.refs.Color.value;
     const {index, dispatch} = this.props;
-    dispatch({type: UPDATE_CAT_NAME, index, name});
+    dispatch({type: UPDATE_CAT_ATTRS, index, name, color});
   }
 
   render() {
@@ -30,7 +31,8 @@ class CatForm extends React.Component {
     return (
       <div>
        <form onSubmit={this.handleFormSubmit}>
-         <Field ref="Name" name="name" type="text" component="input" label="First Name" />
+         <Field ref="Name" name="name" type="text" component="input" />
+         <Field ref="Color" name="color" type="text" component="input"/>
          <button action="submit">Save changes</button>
        </form>
      </div>
