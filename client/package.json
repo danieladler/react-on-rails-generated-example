@@ -55,7 +55,7 @@
   "devDependencies": {
     "babel-plugin-react-transform": "^2.0.2",
     "body-parser": "^1.15.2",
-    "eslint": "^3.8.1",
+    "eslint": "^4.18.2",
     "eslint-config-shakacode": "^6.0.0",
     "eslint-plugin-react": "^6.4.1",
     "fbjs": "^0.8.5",
