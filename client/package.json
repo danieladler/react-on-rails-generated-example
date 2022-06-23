@@ -60,7 +60,7 @@
     "eslint-plugin-react": "^6.4.1",
     "fbjs": "^0.8.5",
     "jscs": "^3.0.7",
-    "jsdom": "^9.8.0",
+    "jsdom": "^16.5.0",
     "react-transform-hmr": "^1.0.4",
     "tape": "^4.6.2",
     "webpack-dev-server": "^3.8.0"
